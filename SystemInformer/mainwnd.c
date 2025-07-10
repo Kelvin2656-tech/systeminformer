@@ -1053,6 +1053,16 @@ VOID PhMwpOnCommand(
             PhMwpExecuteNotificationSettingsMenuCommand(WindowHandle, Id);
         }
         break;
+    case ID_VIEW_COLLAPSEALL:
+        {
+            PhExpandAllProcessNodes(FALSE);
+        }
+        break;
+    case ID_VIEW_EXPANDALL:
+        {
+            PhExpandAllProcessNodes(TRUE);
+        }
+        break;
     case ID_VIEW_HIDEPROCESSESFROMOTHERUSERS:
         {
             PhMwpToggleCurrentUserProcessTreeFilter();
@@ -1071,6 +1081,16 @@ VOID PhMwpOnCommand(
     case ID_VIEW_SCROLLTONEWPROCESSES:
         {
             PH_SET_INTEGER_CACHED_SETTING(ScrollToNewProcesses, !PhCsScrollToNewProcesses);
+        }
+        break;
+    case ID_VIEW_SORTCHILDPROCESSES:
+        {
+            PH_SET_INTEGER_CACHED_SETTING(SortChildProcesses, !PhCsSortChildProcesses);
+        }
+        break;
+    case ID_VIEW_SORTROOTPROCESSES:
+        {
+            PH_SET_INTEGER_CACHED_SETTING(SortRootProcesses, !PhCsSortRootProcesses);
         }
         break;
     case ID_VIEW_SHOWCPUBELOW001:
